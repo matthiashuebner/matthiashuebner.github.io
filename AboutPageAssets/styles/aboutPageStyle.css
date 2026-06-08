@@ -134,6 +134,79 @@ header .socialNetworkNavBar .socialNetworkNav img:hover {
 	font-weight: 400;
 	line-height: 1.8;
 }
+/* Project cards */
+.projectGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 18px;
+	margin: 22px 0 40px;
+}
+.projectCard {
+	display: flex;
+	flex-direction: column;
+	padding: 22px 22px 20px;
+	background: rgba(255,255,255,0.03);
+	border: 1px solid rgba(208,207,207,0.18);
+	border-radius: 12px;
+	text-align: left;
+	transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.projectCard:hover {
+	border-color: rgba(255,255,255,0.55);
+	background: rgba(255,255,255,0.06);
+	transform: translateY(-3px);
+}
+.projectCardTag {
+	font-family: "Open Sans", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgba(208,207,207,0.85);
+	margin: 0 0 8px;
+}
+.projectCardTitle {
+	font-family: "Open Sans", 'Montserrat', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgba(255,255,255,1.00);
+	margin: 0 0 2px;
+}
+.projectCardText {
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.7;
+	color: rgba(208,207,207,1.00);
+	margin: 0 0 18px;
+}
+.projectCardLink {
+	margin-top: auto;
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-family: "Open Sans", 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: rgba(255,255,255,1.00);
+	text-decoration: none;
+	padding: 9px 16px;
+	border: 1px solid rgba(208,207,207,0.45);
+	border-radius: 999px;
+	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.projectCardLink:hover {
+	background: rgba(255,255,255,1.00);
+	color: rgba(0,0,0,0.88);
+	border-color: rgba(255,255,255,1.00);
+}
+.projectCardArrow {
+	transition: transform 0.2s ease;
+}
+.projectCardLink:hover .projectCardArrow {
+	transform: translateX(3px);
+}
 .mainContent {
 	display: block;
 }
