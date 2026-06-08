@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages (manuell)
+
+# Manuell ausgelöster Pages-Deploy. Bewusst nur `workflow_dispatch`:
+# kein automatischer Deploy bei Push — die Seite wird erst veröffentlicht,
+# wenn dieser Workflow über "Run workflow" gestartet wird.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nur ein Deploy gleichzeitig; einen laufenden nicht abbrechen.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pages konfigurieren
+        uses: actions/configure-pages@v5
+
+      # Statische Site (.nojekyll) — Repo-Wurzel direkt als Artefakt hochladen.
+      - name: Artefakt hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
