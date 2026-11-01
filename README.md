@@ -16,8 +16,11 @@ direkt deploybar auf GitHub Pages.
 │       ├── teamslogo.png
 │       ├── outlooklogo.png
 │       └── In-White-34.png                 # LinkedIn-Icon
+├── lapcoach/                               # Support, Datenschutz (DE/EN) und Impressum der App LapCoach
 └── README.md
 ```
+
+Die Seiten unter `lapcoach/` stammen aus dem Repo `matthiashuebner/LapCoach` (Ordner `website/lapcoach/`) und werden dort gepflegt.
 
 ## Lokal ansehen
 
